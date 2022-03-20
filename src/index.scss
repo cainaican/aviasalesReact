@@ -1,0 +1,60 @@
+@import "./style/color.scss";
+@import "./style/fonts.scss";
+@import "./components/sidebar__menu/index.scss";
+@import "./components/filters-transfer/index.scss";
+@import "./components/filters-company/index.scss";
+@import "./components/menu/index.scss";
+@import "./components/ticket/index.scss";
+@import "./components/button/index.scss";
+@import "./components/fromto/index.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: $bg;
+}
+.container {
+  display: block;
+  max-width: 1350px;
+  margin: 50px auto 0;
+}
+.header {
+  & .logo {
+    display: block;
+    margin: 32px auto 38px;
+    padding: 0;
+  }
+}
+.section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@media (max-width: 800px) {
+  .container {
+    margin: 20px auto 0;
+  }
+  .section {
+    flex-direction: column;
+    margin: 0px 20px;
+  }
+  .header {
+    & .logo {
+      margin: 0px auto 18px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: 5px auto 0;
+  }
+  .header {
+    & .logo {
+      margin: 0px auto 5px;
+    }
+  }
+}

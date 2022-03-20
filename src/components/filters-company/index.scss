@@ -1,0 +1,74 @@
+@import "../../style/color.scss";
+
+.menu__filters-company {
+  display: block;
+  box-sizing: border-box;
+  width: 232px;
+  font-family: "Open Sans";
+  font-size: 13px;
+  background-color: #fff;
+  color: $text;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+  &-list {
+    list-style: none;
+  }
+  &-item {
+    padding: 0 20px 0px 46px;
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    transition: all 150ms ease-out;
+    & label {
+      cursor: pointer;
+    }
+    &:first-child {
+      padding: 0 20px;
+      letter-spacing: 0.5px;
+      cursor: default;
+      font-weight: 600;
+      font-size: 12px;
+      height: 32px;
+      line-height: 55px;
+      margin-bottom: 10px;
+      &:hover {
+        background-color: #fff;
+      }
+    }
+    &:hover {
+      background-color: $hover;
+    }
+    & input {
+      width: 0px;
+      width: 0px;
+      &::after {
+        content: "";
+        position: absolute;
+        text-align: center;
+        line-height: 22px;
+        cursor: pointer;
+        border-radius: 50%;
+        top: 10px;
+        left: 20px;
+        width: 18px;
+        height: 18px;
+        border: 1px solid $commonBlue;
+      }
+      &:checked {
+        &:after {
+          content: url("./images/selected.svg");
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .menu__filters-company {
+    margin-right: 10px;
+    height: 95%;
+    width: 100%;
+  }
+}

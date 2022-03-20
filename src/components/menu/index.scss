@@ -1,0 +1,49 @@
+@import "../../style/color.scss";
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  font-family: "Open Sans";
+  font-size: 12px;
+  line-height: 20px;
+  color: $text;
+  margin-bottom: 20px;
+  &__item {
+    width: 166px;
+    font-weight: bold;
+    height: 48px;
+    text-align: center;
+    border: 1px solid #dfe5ec;
+    background-color: #fff;
+    line-height: 48px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    &:first-child {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      border-right: none;
+    }
+    &:last-child {
+      border-top-right-radius: 5px;
+      border-left: none;
+      border-bottom-right-radius: 5px;
+    }
+    &:hover {
+      background-color: $lightBlue;
+    }
+  }
+}
+.active {
+  background-color: $commonBlue;
+  color: #fff;
+}
+
+@media (max-width: 800px) {
+  .menu {
+    justify-content: space-between;
+    &__item {
+      width: 100%;
+    }
+  }
+}

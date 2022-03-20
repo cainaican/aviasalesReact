@@ -1,0 +1,24 @@
+.button {
+  display: block;
+  width: 502px;
+  height: 50px;
+  background-color: $commonBlue;
+  color: #fff;
+  text-transform: uppercase;
+  border: none;
+  font-family: "Open Sans";
+  border-radius: 5px;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  margin: 0 auto;
+  transition: all 150ms linear;
+  &:active {
+    background-color: #2195f3a2;
+  }
+}
+@media (max-width: 600px) {
+  .button {
+    width: 100%;
+  }
+}
