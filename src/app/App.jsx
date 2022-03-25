@@ -58,6 +58,14 @@ const App = () =>{
           <div className='tickets'><Tickets /></div>
           <Button />
         </main>
+        <div class="refs">
+          <a href="https://cainaican.github.io/portfolio/" class="refs__back" title="back">
+            <img src="./img/backPr.png" alt="portfolio" class="refs__back-img" />
+          </a>
+          <a href="https://github.com/cainaican/aviasalesReact" class="refs__back" title="repo in github">
+              <img src="./img/ghPr.png" alt="gitHub" class="refs__back-img" />
+          </a>
+        </div>
       </section>
     </div>
   )
