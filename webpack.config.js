@@ -3,7 +3,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 const path = require('path')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: ["@babel/polyfill", './src/index.js'],
   output: {
     path: path.resolve(__dirname, 'docs'),
     filename: 'bundle.js',
@@ -13,7 +13,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-        template: './src/index.pug',
+        template: './src/index.html',
         minify: 'false',
     }),
     new CopyPlugin({
@@ -35,17 +35,22 @@ module.exports = {
         loader: "html-loader",
       },
       {
-        test: /\.pug$/,
-        use: "pug-loader"
-      },
-      {
         test: /\.s[ac]ss$/i,
         use: [
           "style-loader",
           "css-loader",
           "sass-loader"
         ]
-      }
+      },
+      {
+        test: /\.(js|jsx)$/,
+        include: path.resolve(__dirname, "src"),
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        options: {
+          presets: ['@babel/env', '@babel/react'],
+        }
+      },
     ]
   } 
 }

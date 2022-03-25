@@ -1,24 +1,22 @@
-class Companies {
-  _companies = []
-  constructor(){}
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-  fetchList(){
-    const listOfCompanies = fetch(`./json/companies.json`)
-    return listOfCompanies
-      .then(res => res.json())
-      .then(data => {
-        this._companies = [...data]
-      })
-      .catch(e => console.warn(e.message))
+const Companies = (props) => {
+
+  const { companies } = useSelector( state => state)
+  const template = () => {
+    let item = companies.filtered.filter((c) => c.id === props.company)
+    const logo = `./img/${item[0].logo}`
+    return (
+    <img id={item[0].id} 
+      className="header__logo-img" 
+      src= {logo}
+      alt="company-logo" 
+    />
+    )
   }
-
-  createTemplate(id){
-
-    let item = this._companies.find((c) => c.id === id)
-    //id --> src на лого
-
-    return `<img id=""${item.id}class="header__logo-img" src="./img/${item.logo}" alt="company-logo" />`
-  }
+  
+  return template()
 }
 
 export default Companies

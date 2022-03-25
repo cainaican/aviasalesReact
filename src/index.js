@@ -1,6 +1,13 @@
 import './index.scss'
-import Tickets from './js/Tickets'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './app/App.jsx'
+import { store } from './store/store';
+import { Provider } from 'react-redux'
 
-let tickets = new Tickets
-
-tickets.fetchListsFromJSON()
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root'),
+);
