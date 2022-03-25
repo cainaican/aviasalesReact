@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux'
 import { add as addCompany } from '../slices/companySlice.js'
 import { add as addSegment } from '../slices/segmentSlice.js'
 import { add as addTicket } from '../slices/ticketSlice.js'
+import {} from '../images/'
 
 const App = () =>{
 
@@ -47,7 +48,7 @@ const App = () =>{
   return(
     <div className='container'>
       <header className='header'>
-        <img src='./img/logo.svg' alt='logo' className='logo'/>
+        <img alt='logo' className='logo' src='./img/logo.png'/>
       </header>
       <section className='section'>
         <div className='sidebar'>
