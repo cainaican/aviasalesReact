@@ -47,7 +47,7 @@ const App = () =>{
   return(
     <div className='container'>
       <header className='header'>
-        <img src='/img/logo.svg' alt='logo' className='logo'/>
+        <img src='./img/logo.svg' alt='logo' className='logo'/>
       </header>
       <section className='section'>
         <div className='sidebar'>
